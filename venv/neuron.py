@@ -2,9 +2,12 @@ import numpy as np
 
 
 class Neuron:
-    def __init__(self, weights):
-        self.weights = weights
+    def __init__(self):
+        self.weights = np.random.rand(4)
         self.used = False
+
+    def __eq__(self, other):
+        return self.weights.all() == other.weigths.all()
 
     def normalize(self, normalizer):
         normalizer.normalize(self.weights)
